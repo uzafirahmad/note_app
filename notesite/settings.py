@@ -9,26 +9,25 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-from dotenv import load_dotenv
-from dotenv import dotenv_values
+# from dotenv import load_dotenv
+# from dotenv import dotenv_values
 from pathlib import Path
 from datetime import timedelta
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-config = dotenv_values(".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config["SECRET_KEY"]
+SECRET_KEY = 'django-insecure-7*++=*2#xt(n3gn-p4+hds-@*@w2f!w949*77u549t&-rqd^qx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -135,16 +134,28 @@ WSGI_APPLICATION = 'notesite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'noteapp', 
-        'USER': 'postgres',
-        'PASSWORD': 'a1ab2bc3cd4d',
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'uzafir-db', 
+#         'USER': 'uzafir',
+#         'PASSWORD': '~XIT_~?[T)nO=O;T',
+#         # 'HOST': '/cloudsql/cloud-work-314310:us-central1:training-week', 
+#         'HOST': '130.211.206.126',
+#         'PORT': 5432,
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'uzafir-db', 
+#         'USER': 'uzafir',
+#         'PASSWORD': '~XIT_~?[T)nO=O;T',
+#         'HOST': '127.0.0.1', 
+#         'PORT': 5433,
+#     }
+# }
 
 
 # Password validation
@@ -190,3 +201,16 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# version: '3.9'
+
+# services:
+#   django:
+#     image: django-docker:0.0.1
+#     build: .
+#     ports:
+#       - "8081:8081"
+    
+#     extra_hosts:
+#         - "host.docker.internal:host-gateway"

@@ -26,7 +26,6 @@ cloud_sql_proxy.exe
 /coverage
 
 # production
-/noteapp_react/build
 
 # misc
 .DS_Store

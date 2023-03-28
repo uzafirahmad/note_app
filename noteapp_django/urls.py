@@ -10,10 +10,11 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('',TemplateView.as_view(template_name='index.html')),
+    path('login/',TemplateView.as_view(template_name='index.html')),
     path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('login/',views.getRoutes,name="login"),
     path('allnotes/',views.notes_list,name="notes_list"),
+    path('getroutes/',views.getroutes),
     path('add/',views.add_note,name="add_note"),
     path('delete/',views.del_note,name="del_note"),
     path('update/',views.update_note,name="update_note"),

@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 from .models import note
 from django.db.models import Q
 from .serializers import NoteSerializer
+import os
 from django.shortcuts import render
+from django.conf import settings
 import json
 from django.http import JsonResponse
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
@@ -63,10 +65,20 @@ def update_note(request):
     note_to_be_updated.save()
     return Response({"status":True})
 
-@api_view(['GET'])
-def getRoutes(request):
-    routes=[
-        '/api/token',
-        '/api/token/refresh'
-    ]
-    return Response(routes)
+def getroutes(request):
+    directories1=os.listdir(str(settings.BASE_DIR))
+    directories2=os.listdir(str(settings.BASE_DIR)+'noteapp_react/')
+    # directories3=os.listdir(str(settings.BASE_DIR)+'noteapp_react/build/')
+    dict={"entries1":directories1,
+          "entries2":directories2,
+        #   "entries3":directories3
+          }
+    return JsonResponse(dict)
+
+# @api_view(['GET'])
+# def getRoutes(request):
+#     routes=[
+#         '/api/token',
+#         '/api/token/refresh'
+#     ]
+#     return Response(routes)
