@@ -1,2 +1,1 @@
-export const backendRoot ='https://dashboarding-api-transform-london-dot-transform-london.uc.r.appspot.com'
-// export const backendRoot ="http://localhost:8000"
+export const backendRoot ="http://127.0.0.1:8000"

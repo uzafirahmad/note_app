@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./components/Home";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import { AuthProvider } from "./context/AuthContext";
